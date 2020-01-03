@@ -35,7 +35,7 @@ public class PlayerController {
 	
 	@RequestMapping("/topRushers")
 	public List<String> getRushers() throws IOException{	
-		List<String> playerList = new ArrayList<String>();
+		List<String> playerList = new ArrayList<>();
 		tts = new TopTenScraper();
 		String[] s = tts.getTopRushers(1);
 		
@@ -46,45 +46,53 @@ public class PlayerController {
 	}
 	
 	@RequestMapping("/topReceivers")
-	public List<TopTenList> getReceivers() throws IOException{	
-		List<TopTenList> playerList = new ArrayList<TopTenList>();
+	public List<String> getReceivers() throws IOException{	
+		List<String> playerList = new ArrayList<>();
 		tts = new TopTenScraper();
-		String s = tts.getTopReceivers(2);
+		String[] s = tts.getTopReceivers(2);
 		
-	    playerList.add(new TopTenList(s));  
+		for(int i = 0; i < s.length; i++) {
+	    	playerList.add(s[i]);  
+	    }  
 	    return playerList;
      
 	}
 	
 	@RequestMapping("/topKickers")
-	public List<TopTenList> getKickers() throws IOException{	
-		List<TopTenList> playerList = new ArrayList<TopTenList>();
+	public List<String> getKickers() throws IOException{	
+		List<String> playerList = new ArrayList<>();
 		tts = new TopTenScraper();
-		String s = tts.getTopKickers(2);
+		String[] s = tts.getTopKickers(2);
 		
-	    playerList.add(new TopTenList(s));  
+		for(int i = 0; i < s.length; i++) {
+	    	playerList.add(s[i]);  
+	    } 
 	    return playerList;
      
 	}
 	
 	@RequestMapping("/topPunters")
-	public List<TopTenList> getPunters() throws IOException{	
-		List<TopTenList> playerList = new ArrayList<TopTenList>();
+	public List<String> getPunters() throws IOException{	
+		List<String> playerList = new ArrayList<>();
 		tts = new TopTenScraper();
-		String s = tts.getTopPunters(2);
+		String[] s = tts.getTopPunters(2);
 		
-	    playerList.add(new TopTenList(s));  
+		for(int i = 0; i < s.length; i++) {
+	    	playerList.add(s[i]);  
+	    } 
 	    return playerList;
      
 	}
 	
 	@RequestMapping("/topSacks")
-	public List<TopTenList> getSacks() throws IOException{	
-		List<TopTenList> playerList = new ArrayList<TopTenList>();
+	public List<String> getSacks() throws IOException{	
+		List<String> playerList = new ArrayList<>();
 		tts = new TopTenScraper();
-		String s = tts.getTopSacks(2);
+		String[] s = tts.getTopSacks(2);
 		
-	    playerList.add(new TopTenList(s));  
+		for(int i = 0; i < s.length; i++) {
+	    	playerList.add(s[i]);  
+	    } 
 	    return playerList;
      
 	}

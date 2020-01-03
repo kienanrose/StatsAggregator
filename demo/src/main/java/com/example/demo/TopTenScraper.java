@@ -21,7 +21,7 @@ public class TopTenScraper {
 			
 			for(int i = 0; i < rows.size(); i++) {
 				Element row = rows.get(i);
-				System.out.println(row.text());
+				System.out.println("." + row.text());
 				players[i] = row.text();
 			}
 			
